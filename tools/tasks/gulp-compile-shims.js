@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var Config = require('../config');
 
-gulp.task('shims', () =>
+gulp.task('compile:shims', () =>
   gulp
     .src([
       'node_modules/core-js/client/shim.min.js',

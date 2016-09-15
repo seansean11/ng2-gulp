@@ -1,16 +1,19 @@
-var gulp = require('gulp');
-var ts = require('gulp-typescript');
-var config = require('../config.js');
+const gulp = require('gulp');
+const ts = require('gulp-typescript');
+const config = require('../config.js');
 
 gulp.task('compile:ts', () => {
-  var tsProject = ts.createProject('tsconfig.json');
+  const tsProject = ts.createProject('tsconfig.json');
 
-  var tsResult = tsProject.src()
+  const tsResult = tsProject.src([
+      `${config.SRC}**/*.ts`,
+      `!${config.ASSETS}`
+    ])
     .pipe(ts(tsProject));
 
   return tsResult.js.pipe(gulp.dest(config.DIST));
 });
 
 gulp.task('watch:ts', () => {
-  gulp.watch(config.APP + '**/*.ts', ['compile:ts']);
+  gulp.watch(`${config.APP}**/*.ts`, ['compile:ts']);
 });

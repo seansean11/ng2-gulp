@@ -11,8 +11,7 @@ gulp.task('serve:dev', (done) => {
 
 gulp.task('build:dev', (done) => {
   runSequence('clean',
-    ['sass', 'compile:ts', 'build:html'],
-    ['watch:sass', 'watch:ts', 'watch:html'],
+    ['sass', 'compile:shims', 'compile:ts', 'build:html'],
     done);
 });
 
