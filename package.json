@@ -37,6 +37,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-inline-ng2-template": "^3.0.1",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.6",
     "jasmine-core": "^2.5.1",
     "karma": "^1.2.0",

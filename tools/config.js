@@ -4,6 +4,7 @@ process.env.PORT = process.env.PORT ? process.env.PORT : '8080';
 function Config() {
   this.ENV = process.env.NODE_ENV;
   this.PORT = process.env.PORT;
+  this.DIST = 'dist/';
   this.SRC = 'src/';
   this.APP = `${this.SRC}app/`;
   this.ASSETS = `${this.SRC}assets/`;
