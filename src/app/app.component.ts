@@ -3,8 +3,8 @@ import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'nw-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  templateUrl: './app/app.component.html',
+  styleUrls: ['./app/app.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent { }

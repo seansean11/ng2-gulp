@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  styleUrls: [ './home.style.scss' ],
-  templateUrl: './home.template.html'
+  selector: 'nw-component',
+  styleUrls: [ './app/home/home.style.css' ],
+  templateUrl: './app/home/home.template.html'
 })
 export class HomeComponent {
 

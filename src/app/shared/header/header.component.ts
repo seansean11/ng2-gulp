@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'nw-header',
-  templateUrl: './header.template.html',
-  styles: [ './header.style.scss' ]
+  templateUrl: './app/shared/header/header.template.html',
+  styles: [ './app/shared/header/header.style.css' ]
 })
 export class HeaderComponent {
   title: string;
