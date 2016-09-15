@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const config = require('../config.js');
 
+const distDir = (config.ENV === 'production') ? config.TMP : config.DIST;
+
 gulp.task('compile:ts', () => {
   const tsProject = ts.createProject('tsconfig.json');
 
@@ -11,7 +13,7 @@ gulp.task('compile:ts', () => {
     ])
     .pipe(ts(tsProject));
 
-  return tsResult.js.pipe(gulp.dest(config.DIST));
+  return tsResult.js.pipe(gulp.dest(distDir));
 });
 
 gulp.task('watch:ts', () => {

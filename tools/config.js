@@ -6,6 +6,7 @@ function Config() {
   this.PORT = process.env.PORT;
   this.SRC = './src/';
   this.DIST = './dist/';
+  this.TMP = './.tmp/';
   this.APP = `${this.SRC}app/`;
   this.ASSETS = `${this.SRC}assets/`;
   this.INDEX = `${this.SRC}index.html`;
