@@ -10,7 +10,8 @@ gulp.task('typescript:prod', () =>
   gulp
     .src([
       `${Config.APP}**/*.ts`,
-      `${Config.APP}**/*.spec.ts`,
+      `!${Config.APP}**/*.spec.ts`,
+      `!${Config.APP}**/*.spec.ts`,
     ])
     .pipe(sourcemaps.init())
     .pipe(ts(tsConfig.compilerOptions))

@@ -9,3 +9,5 @@ gulp.task('serve:dev', (done) => {
     'browser-sync',
     done);
 });
+
+gulp.task('build:dev', ['clean', 'shims', 'typescript:dev', 'systemjs']);

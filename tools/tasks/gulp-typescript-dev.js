@@ -8,7 +8,10 @@ var Config = require('../config');
 
 gulp.task('typescript:dev', () =>
   gulp
-    .src(`${Config.APP}**/*.ts`)
+    .src([
+      `${Config.SRC}**/*.ts`,
+      `!${Config.ASSETS}`
+    ])
     .pipe(sourcemaps.init())
     .pipe(ts(tsConfig.compilerOptions))
     .pipe(gulp.dest(Config.DIST))
