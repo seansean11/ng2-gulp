@@ -1,9 +1,3 @@
-require('./tools/tasks/gulp-clean');
-require('./tools/tasks/gulp-images');
-require('./tools/tasks/gulp-karma');
-require('./tools/tasks/gulp-lint');
-require('./tools/tasks/gulp-protractor');
-require('./tools/tasks/gulp-scss');
-require('./tools/tasks/gulp-serve');
-require('./tools/tasks/gulp-typescript');
-require('./tools/tasks/gulp-vendor');
+var requireDir = require('require-dir');
+
+requireDir('./tools/tasks');
