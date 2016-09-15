@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nw-component',
+  selector: 'ng-component',
   styleUrls: [ './app/home/home.style.css' ],
   templateUrl: './app/home/home.template.html'
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nw-header',
+  selector: 'ng-header',
   templateUrl: './app/shared/header/header.template.html',
   styles: [ './app/shared/header/header.style.css' ]
 })
