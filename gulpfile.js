@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-require('./tools/index.js');
+var requireDir = require('require-dir');
+requireDir('./tools/tasks');
 
 gulp.task('serve:dev', (done) => {
   runSequence('clean',
@@ -10,4 +11,10 @@ gulp.task('serve:dev', (done) => {
     done);
 });
 
-gulp.task('build:dev', ['clean', 'shims', 'typescript:dev', 'systemjs']);
+gulp.task('build:dev', () => {
+
+});
+
+gulp.task('build:prod', () => {
+
+});
