@@ -1,14 +1,9 @@
-module.exports = function(config) {
-  var webpackTest = require('./config/webpack.test.js');
-
-  var configuration = {
+module.exports = config => {
+  config.set({
     basePath: '',
     frameworks: ['jasmine'],
     files: [{ pattern: './config/karma-test-shim.js', watched: false }],
-    preprocessors: { './config/karma-test-shim.js': ['coverage', 'webpack', 'sourcemap'] },
-    webpack: webpackTest,
-    webpackServer: { noInfo: true },
-    webpackMiddleware: { stats: 'errors-only' },
+    preprocessors: { './config/karma-test-shim.js': ['coverage', 'sourcemap'] },
     coverageReporter: {
       dir : 'coverage/',
       reporters: [
@@ -24,7 +19,5 @@ module.exports = function(config) {
     autoWatch: false,
     browsers: ['Chrome'],
     singleRun: true
-  };
-
-  config.set(configuration);
-}
+  });
+};

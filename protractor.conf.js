@@ -1,11 +1,10 @@
 require('ts-node/register');
-var helpers = require('./config/helpers');
 
 exports.config = {
   baseUrl: 'http://localhost:8080/',
   specs: [
-    helpers.root('src/**/**.e2e.ts'),
-    helpers.root('src/**/*.e2e.ts')
+    './src/**/**.e2e.ts',
+    './src/**/*.e2e.ts'
   ],
   framework: 'jasmine2',
   allScriptsTimeout: 11000,
