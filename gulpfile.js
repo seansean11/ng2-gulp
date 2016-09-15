@@ -4,15 +4,16 @@ var requireDir = require('require-dir');
 requireDir('./tools/tasks');
 
 gulp.task('serve:dev', (done) => {
-  runSequence('clean',
-    ['sass', 'compile:ts', 'build:html'],
-    ['watch:sass', 'watch:ts', 'watch:html'],
+  runSequence('build:dev',
     'browser-sync',
     done);
 });
 
-gulp.task('build:dev', () => {
-
+gulp.task('build:dev', (done) => {
+  runSequence('clean',
+    ['sass', 'compile:ts', 'build:html'],
+    ['watch:sass', 'watch:ts', 'watch:html'],
+    done);
 });
 
 gulp.task('build:prod', () => {
