@@ -15,6 +15,7 @@ coverage
 /typings/
 
 # Build
+.tmp
 dist
 
 # OS X trash files

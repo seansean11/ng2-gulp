@@ -9,14 +9,15 @@ gulp.task('serve:dev', (done) => {
     done);
 });
 
-gulp.task('build:dev', (done) => {
+gulp.task('build', (done) => {
   runSequence('clean',
     ['sass', 'compile:shims', 'compile:ts', 'build:html'],
     done);
 });
 
-gulp.task('build:prod', () => {
+gulp.task('build:prod', (done) => {
   runSequence('clean',
-  ['sass', 'compile:shims', 'compile:ts']
-  )
+    'build',
+    'bundle',
+    done);
 });

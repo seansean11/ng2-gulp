@@ -1,9 +1,8 @@
-process.env.NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
-process.env.PORT = process.env.PORT ? process.env.PORT : '8080';
+const gutil = require('gulp-util');
 
 function Config() {
-  this.ENV = process.env.NODE_ENV;
-  this.PORT = process.env.PORT;
+  this.ENV = gutil.env.env || 'development';;
+  this.PORT = '8080';;
   this.SRC = './src/';
   this.DIST = './dist/';
   this.TMP = './.tmp/';
