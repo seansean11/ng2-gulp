@@ -6,7 +6,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HeaderComponent, FooterComponent } from './shared/index';
 import { HomeComponent } from './home/index';
-import { NoContent } from './no-content/index';
+import { NoContentComponent } from './no-content/index';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { NoContent } from './no-content/index';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NoContent
+    NoContentComponent
   ],
   imports: [
     BrowserModule,

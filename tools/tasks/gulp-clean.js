@@ -1,4 +1,6 @@
 const gulp = require('gulp');
 const del = require('del');
 
-gulp.task('clean', () => del(['dist', 'coverage']));
+const config = require('../config.js');
+
+gulp.task('clean', () => del([config.DIST, 'coverage']));

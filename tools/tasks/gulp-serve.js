@@ -8,7 +8,7 @@ gulp.task('browser-sync', () => {
       baseDir: ['./dist/', './']
     },
     port: config.PORT,
-    logLevel: "info",
+    logLevel: "silent",
     injectChanges: true,
     ghostMode: {
       clicks: true,

@@ -5,7 +5,7 @@ var config = require('../config.js');
 
 const distDir = (config.ENV === 'production') ? config.TMP : config.DIST;
 
-gulp.task('sass', () => {
+gulp.task('compile:sass', () => {
   return gulp.src(`${config.APP}**/*.scss`)
     .pipe(sourcemaps.init())
     .pipe(sass())

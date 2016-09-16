@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
+const plumber = require('gulp-plumber');
 const config = require('../config.js');
 
 const distDir = (config.ENV === 'production') ? config.TMP : config.DIST;
@@ -11,6 +12,7 @@ gulp.task('compile:ts', () => {
       `${config.SRC}**/*.ts`,
       `!${config.ASSETS}`
     ])
+    .pipe(plumber())
     .pipe(ts(tsProject));
 
   return tsResult.js.pipe(gulp.dest(distDir));
