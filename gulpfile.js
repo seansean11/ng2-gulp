@@ -6,14 +6,14 @@ var config = require('./tools/config.js');
 requireDir('./tools/tasks');
 
 gulp.task('serve:dev', (done) => {
-  runSequence('build:dev',
+  runSequence('build',
     ['watch:sass', 'watch:ts', 'watch:html'],
     'lint:ts',
     'browser-sync',
     done);
 });
 
-gulp.task('build:dev', (done) => {
+gulp.task('build', (done) => {
   runSequence('clean',
     ['compile:sass', 'compile:shims', 'compile:ts', 'build:html'],
     done);
@@ -37,8 +37,9 @@ gulp.task('tdd', ['compile:ts'], (done) => {
   }, () => done(null)).start();
 });
 
-gulp.task('build:prod', () => {
+gulp.task('build:prod', (done) => {
   runSequence('clean',
-  ['sass', 'compile:shims', 'compile:ts']
-  )
+    'build',
+    'bundle',
+    done);
 });
