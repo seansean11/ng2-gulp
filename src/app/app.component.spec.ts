@@ -1,33 +1,41 @@
-// import { async,
-//         TestBed } from '@angular/core/testing';
-// import { AppComponent } from './app.component';
+import {
+  async,
+  TestBed
+} from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { RouterOutlet } from '@angular/router';
 
-// describe('AppComponent', () => {
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({ declarations: [AppComponent]});
-//   });
+@Component({
+  selector: 'ng-header',
+  template: '<div>Header</div>'
+})
+class MockHeaderComponent { }
 
-//   beforeEach(async(() => {
-//     TestBed.compileComponents();
-//   }))
+@Component({
+  selector: 'ng-footer',
+  template: '<div>Footer</div>'
+})
+class MockFooterComponent { }
 
-//   it ('should build', () => {
-//     let fixture = TestBed.createComponent(AppComponent);
-//     // expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
-//     expect(true).toBe(true);
-//   });
-// });
-
-describe('Tests Should Run', () => {
-  it('Should run passing tests', () => {
-    expect(true).toBe(true);
+describe('App Component', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [MockHeaderComponent, MockFooterComponent, AppComponent],
+      imports: [ RouterTestingModule ]
+    });
   });
 
-  it('Should run failing tests', () => {
-    expect(true).toBe(false);
-  });
+  it('Should: Include Header, Footer, and main content', async(() => {
+    TestBed.compileComponents().then(() => {
+      var fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      var compiled = fixture.debugElement.nativeElement;
 
-  xit('Should skip tests', () => {
-    expect(0).toBe(0);
-  });
+      expect(compiled.textContent).toContain('Header');
+      expect(compiled.textContent).toContain('My Angular 2 Application');
+      expect(compiled.textContent).toContain('Footer');
+    });
+  }));
 });
