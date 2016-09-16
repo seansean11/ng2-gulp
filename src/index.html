@@ -6,10 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NG2-Gulp</title>
   <script src="js/shims.js"></script>
+
+  <!-- @if ENV='production' -->
+  <script src="js/bundle.js"></script>
+  <!-- @endif -->
+
+  <!-- @if ENV='development' -->
   <script src="systemjs.config.js"></script>
   <script>
     System.import('app').catch(function(err){ console.error(err); });
   </script>
+  <!-- @endif -->
+
 </head>
 <body>
   <ng-app>Loading...</ng-app>

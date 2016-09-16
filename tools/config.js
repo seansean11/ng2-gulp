@@ -1,7 +1,7 @@
-const gutil = require('gulp-util');
+const argv = require('yargs').argv;
 
 function Config() {
-  this.ENV = gutil.env.env || 'development';;
+  this.ENV = argv.env || 'development';;
   this.PORT = '8080';;
   this.SRC = './src/';
   this.DIST = './dist/';
@@ -12,6 +12,8 @@ function Config() {
   this.SCSS = `${this.ASSETS}scss/`;
   this.FONTS = `${this.ASSETS}fonts/`;
   this.IMG = `${this.ASSETS}img/`;
+
+  console.log(process.env.NODE_ENV);
 }
 
 module.exports = new Config();
