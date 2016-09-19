@@ -1,5 +1,3 @@
-require('ts-node/register');
-
 exports.config = {
   baseUrl: 'http://localhost:8080/',
   specs: [
@@ -7,7 +5,7 @@ exports.config = {
     './src/**/*.e2e.ts'
   ],
   framework: 'jasmine2',
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 110000,
   jasmineNodeOpts: {
     showTiming: true,
     showColors: true,
@@ -23,7 +21,11 @@ exports.config = {
     }
   },
   onPrepare: function() {
-    browser.ignoreSunchronization = true;
+    const SpecReporter = require('jasmine-spec-reporter');
+    // add jasmine spec reporter
+    jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
+
+    browser.ignoreSynchronization = false;
   },
   useAllAngular2AppRoots: true
 };
