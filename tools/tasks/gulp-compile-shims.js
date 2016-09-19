@@ -2,8 +2,6 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const config = require('../config');
 
-const distDir = (config.ENV === 'production') ? config.TMP : config.DIST;
-
 gulp.task('compile:shims', () =>
   gulp
     .src([
@@ -13,5 +11,5 @@ gulp.task('compile:shims', () =>
       'node_modules/systemjs/dist/system.src.js'
     ])
     .pipe(concat('shims.js'))
-    .pipe(gulp.dest(`${distDir}js/`))
+    .pipe(gulp.dest(`${config.DIST}js/`))
 );

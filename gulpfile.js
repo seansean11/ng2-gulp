@@ -1,16 +1,30 @@
 var gulp = require('gulp');
+var argv = require('yargs').argv;
+var gutil = require('gulp-util');
 var Server = require('karma').Server;
 var runSequence = require('run-sequence');
 var requireDir = require('require-dir');
 var config = require('./tools/config.js');
 requireDir('./tools/tasks');
 
-gulp.task('serve:dev', (done) => {
-  runSequence('build',
-    ['watch:sass', 'watch:ts', 'watch:html'],
-    'lint:ts',
-    'browser-sync',
-    done);
+gulp.task('serve', (done) => {
+  if (argv.env === 'production') {
+    gutil.log('** Serving Production Build')
+
+    runSequence('build:prod',
+      ['watch:sass', 'watch:ts', 'watch:html'],
+      'lint:ts',
+      'browser-sync',
+      done);
+  } else {
+    gutil.log('** Serving Development Build')
+
+    runSequence('build',
+      ['watch:sass', 'watch:ts', 'watch:html'],
+      'lint:ts',
+      'browser-sync',
+      done);
+  }
 });
 
 gulp.task('build', (done) => {
