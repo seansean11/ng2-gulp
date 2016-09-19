@@ -9,8 +9,8 @@ gulp.task('compile:ts', () => {
   const tsProject = ts.createProject('tsconfig.json');
 
   const tsResult = tsProject.src([
-      `${config.SRC}**/*.ts`,
-      `!${config.ASSETS}`
+      `${config.SRC}*.ts`,
+      `${config.APP}**/*.ts`
     ])
     .pipe(plumber())
     .pipe(ts(tsProject));

@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Anuglar 2 Gulp starter",
   "scripts": {
-    "start": "gulp serve:dev",
-    "lite": "lite-server",
-    "test": "karma start karma.conf.js",
+    "start": "gulp serve",
+    "test": "gulp test",
+    "test:watch": "gulp tdd",
     "postinstall": "typings install",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js",
-    "e2e": "protractor",
-    "pree2e": "webdriver-manager update -- --standalone"
+    "build:dev": "gulp build",
+    "build:prod": "gulp build:prod",
+    "e2e": "gulp build && gulp protractor"
   },
   "author": "Sean Michael",
   "license": "MIT",
