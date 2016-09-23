@@ -6,7 +6,6 @@
     "start": "gulp serve",
     "test": "gulp test",
     "test:watch": "gulp tdd",
-    "postinstall": "typings install",
     "build:dev": "gulp build",
     "build:prod": "gulp build:prod",
     "e2e": "gulp build && gulp protractor"
@@ -35,6 +34,11 @@
     "zone.js": "^0.6.22"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/jasmine": "^2.2.34",
+    "@types/node": "^6.0.40",
+    "@types/protractor": "^1.5.20",
+    "@types/selenium-webdriver": "^2.53.30",
     "browser-sync": "^2.16.0",
     "codelyzer": "0.0.28",
     "del": "^2.2.2",
@@ -46,7 +50,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^6.1.1",
-    "gulp-typescript": "^2.13.6",
+    "gulp-typescript": "^3.0.0",
     "gulp-util": "^3.0.7",
     "jasmine-core": "^2.5.1",
     "jasmine-spec-reporter": "^2.7.0",
@@ -62,8 +66,7 @@
     "run-sequence": "^1.2.2",
     "systemjs-builder": "^0.15.31",
     "tslint": "^3.15.1",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.3",
+    "typescript": "^2.0.3",
     "yargs": "^5.0.0"
   }
 }

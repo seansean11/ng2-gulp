@@ -5,7 +5,6 @@ import {
 import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'ng-header',
@@ -29,9 +28,9 @@ describe('App Component', () => {
 
   it('Should: Include Header, Footer, and main content', async(() => {
     TestBed.compileComponents().then(() => {
-      var fixture = TestBed.createComponent(AppComponent);
+      let fixture = TestBed.createComponent(AppComponent);
       fixture.detectChanges();
-      var compiled = fixture.debugElement.nativeElement;
+      let compiled = fixture.debugElement.nativeElement;
 
       expect(compiled.textContent).toContain('Header');
       expect(compiled.textContent).toContain('My Angular 2 Application');

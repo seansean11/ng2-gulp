@@ -4,18 +4,16 @@ const plumber = require('gulp-plumber');
 const config = require('../config.js');
 
 const distDir = (config.ENV === 'production') ? config.TMP : config.DIST;
+const tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('compile:ts', () => {
-  const tsProject = ts.createProject('tsconfig.json');
-
-  const tsResult = tsProject.src([
+  tsProject.src([
       `${config.SRC}*.ts`,
       `${config.APP}**/*.ts`
     ])
     .pipe(plumber())
-    .pipe(ts(tsProject));
-
-  return tsResult.js.pipe(gulp.dest(distDir));
+    .pipe(tsProject()).js
+    .pipe(gulp.dest(distDir));
 });
 
 gulp.task('watch:ts', () => {

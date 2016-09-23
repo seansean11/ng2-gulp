@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'ng-app',

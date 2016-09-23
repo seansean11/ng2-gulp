@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styles: [ './app/shared/header/header.style.css' ]
 })
 export class HeaderComponent {
-  title: string;
-
-  constructor() {
-
-  }
+  public title: string;
 }

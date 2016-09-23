@@ -10,6 +10,16 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "typeRoots": [
+    "./node_modules/@types",
+    "./node_modules"
+  ],
+  "types": [
+    "core-js",
+    "jasmine",
+    "node",
+    "protractor"
+  ],
   "exclude": [
     "node_modules"
   ]
